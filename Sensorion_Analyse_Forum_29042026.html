@@ -6,7 +6,7 @@
 <title>Sensorion (ALSEN) — Analyse 29/04/2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:#04060f;--surface:#080c18;--surface2:#0d1226;--border:#131a30;
@@ -32,24 +32,16 @@
   .hmeta strong{color:var(--text)}
   .npc{font-size:11px;color:#4a5080;font-style:italic;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
 
-  /* SANOFI BOX */
-  .sanofi-box{background:rgba(52,211,153,0.08);border:2px solid rgba(52,211,153,0.4);border-radius:12px;padding:16px 20px;margin-top:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .sb2-big{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;color:var(--green);flex-shrink:0;line-height:1}
-  .sb2-sub{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--sub);margin-top:4px}
-  .sb2-txt{font-size:13.5px;color:#a7f3d0;line-height:1.6}
-  .sb2-txt strong{color:var(--green)}
-
-  /* STRIP */
-  .cat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-  .cs{border-radius:10px;padding:14px 16px;border:1px solid;text-align:center}
-  .cs.g{background:rgba(52,211,153,0.07);border-color:rgba(52,211,153,0.25)}
-  .cs.i{background:rgba(129,140,248,0.07);border-color:rgba(129,140,248,0.25)}
-  .cs.y{background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.25)}
-  .csl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
-  .cs.g .csl{color:var(--green)}.cs.i .csl{color:var(--indigo)}.cs.y .csl{color:var(--yellow)}
-  .csv{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700}
-  .cs.g .csv{color:var(--green)}.cs.i .csv{color:var(--indigo)}.cs.y .csv{color:var(--yellow)}
-  .css2{font-size:11px;margin-top:4px;color:var(--sub)}
+  .partner-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .ps{border-radius:10px;padding:14px 16px;border:2px solid;text-align:center}
+  .ps.pasteur{background:rgba(129,140,248,0.08);border-color:rgba(129,140,248,0.4)}
+  .ps.sanofi{background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.35)}
+  .ps.necker{background:rgba(56,189,248,0.07);border-color:rgba(56,189,248,0.25)}
+  .psl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
+  .ps.pasteur .psl{color:var(--indigo)}.ps.sanofi .psl{color:var(--green)}.ps.necker .psl{color:var(--blue)}
+  .psv{font-family:'JetBrains Mono',monospace;font-size:.95rem;font-weight:700}
+  .ps.pasteur .psv{color:var(--indigo)}.ps.sanofi .psv{color:var(--green)}.ps.necker .psv{color:var(--blue)}
+  .pss{font-size:11px;margin-top:5px;color:var(--sub)}
 
   section{margin-top:42px}
   .stitle{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--indigo);margin-bottom:16px;display:flex;align-items:center;gap:10px}
@@ -72,19 +64,14 @@
   .ku{color:var(--green)}.kdn{color:var(--red)}.kn{color:var(--sub)}.kw{color:var(--yellow)}.ki{color:var(--indigo)}.kb{color:var(--blue)}
   .ks{font-size:11px;color:var(--sub);margin-top:3px}
 
-  /* PIPELINE */
-  .pip-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}
-  .pp{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px;position:relative;overflow:hidden}
-  .pp::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px}
-  .pp.s501::before{background:var(--green)}
-  .pp.s601::before{background:var(--indigo)}
-  .pp.s40::before{background:var(--blue)}
-  .pp h3{font-size:.85rem;font-weight:700;margin-bottom:8px}
-  .pp.s501 h3{color:var(--green)}.pp.s601 h3{color:var(--indigo)}.pp.s40 h3{color:var(--blue)}
-  .pp ul{list-style:none;display:flex;flex-direction:column;gap:5px}
-  .pp ul li{font-size:12.5px;color:#6872a8;padding-left:12px;position:relative}
-  .pp ul li::before{content:'›';position:absolute;left:0;font-weight:700}
-  .pp.s501 ul li::before{color:var(--green)}.pp.s601 ul li::before{color:var(--indigo)}.pp.s40 ul li::before{color:var(--blue)}
+  /* PLATEFORME PASTEUR */
+  .pasteur-box{background:var(--surface);border:2px solid rgba(129,140,248,0.4);border-radius:14px;padding:26px;margin-top:14px;position:relative;overflow:hidden}
+  .pasteur-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--blue),var(--green))}
+  .past-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+  .pk{background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:14px;text-align:center}
+  .pkl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+  .pkv{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--indigo)}
+  .pks{font-size:11.5px;color:#6872a8;margin-top:4px}
 
   /* DONNÉES CLINIQUES */
   .clin-box{background:var(--surface);border:2px solid rgba(52,211,153,0.3);border-radius:14px;padding:22px;margin-top:14px;position:relative;overflow:hidden}
@@ -95,7 +82,13 @@
   .ckv{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--green)}
   .cks{font-size:11.5px;color:#6872a8;margin-top:4px}
 
-  /* FIBONACCI */
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{background:var(--surface2);color:var(--sub);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:9px 14px;text-align:left;border-bottom:1px solid var(--border)}
+  td{padding:10px 14px;border-bottom:1px solid rgba(19,26,48,0.6);color:var(--text);vertical-align:middle}
+  tr:last-child td{border-bottom:none}
+  .dt{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:12px}
+  .dt td{color:#6872a8}
+
   .fw{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:12px}
   .fw h3{font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:6px}
   .fw p{font-size:13px;color:var(--sub);margin-bottom:14px}
@@ -107,24 +100,23 @@
   .frow.ath{background:rgba(251,191,36,0.04);border-radius:6px;padding:7px 10px;margin:1px -10px;border:1px solid rgba(251,191,36,0.18)}
   .flvl{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6872a8;font-weight:600}
   .frow.cours .flvl{color:var(--indigo);font-weight:700}
-  .frow.sup .flvl{color:var(--green)}
   .frow.res .flvl{color:var(--blue)}
+  .frow.sup .flvl{color:var(--green)}
   .frow.ath .flvl{color:var(--yellow)}
   .fbw{background:rgba(255,255,255,0.04);border-radius:4px;height:7px}
   .fb{height:7px;border-radius:4px}
   .frow.cours .fb{background:var(--indigo)}
-  .frow.sup .fb{background:rgba(52,211,153,0.35)}
-  .frow.res .fb{background:rgba(56,189,248,0.35)}
+  .frow.res .fb{background:rgba(56,189,248,0.4)}
+  .frow.sup .fb{background:rgba(52,211,153,0.4)}
   .frow.ath .fb{background:rgba(251,191,36,0.3)}
   .fb.n{background:rgba(129,140,248,0.15)}
   .fp{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;color:var(--text);text-align:right}
   .frow.cours .fp{color:var(--indigo);font-size:.95rem}
-  .frow.sup .fp{color:var(--green)}
   .frow.res .fp{color:var(--blue)}
+  .frow.sup .fp{color:var(--green)}
   .frow.ath .fp{color:var(--yellow)}
   .fnote{margin-top:12px;font-size:12.5px;color:var(--sub);padding:11px 14px;background:rgba(129,140,248,0.05);border-radius:8px;border-left:3px solid rgba(129,140,248,0.35);line-height:1.6}
 
-  /* PERSPECTIVES */
   .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
   .pc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px}
   .pc h4{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
@@ -134,7 +126,6 @@
   .pc ul li{font-size:13px;color:#6872a8;padding-left:14px;position:relative}
   .pc ul li::before{content:'›';position:absolute;left:0;font-weight:700;color:var(--indigo)}
 
-  /* VERDICT */
   .verdict{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:12px;position:relative;overflow:hidden}
   .verdict::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--green))}
   .verdict h3{font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:12px}
@@ -143,17 +134,23 @@
   .conclu .clabel{color:var(--yellow);display:block;margin-bottom:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
   .conclu .cline{display:block;color:var(--heading);margin-bottom:6px;font-size:14px}
   .sw{display:flex;align-items:center;gap:18px;margin-bottom:18px}
-  .sb3{width:72px;height:72px;border-radius:50%;border:3px solid var(--indigo);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(129,140,248,0.08);flex-shrink:0}
-  .sb3 .sn{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--indigo);line-height:1}
-  .sb3 .sl{font-size:9px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
+  .sb{width:72px;height:72px;border-radius:50%;border:3px solid var(--indigo);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(129,140,248,0.08);flex-shrink:0}
+  .sb .sn{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--indigo);line-height:1}
+  .sb .sl{font-size:9px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
   .sd{font-size:13.5px;color:var(--sub)}
   .sd strong{color:var(--heading);display:block;font-size:1rem;margin-bottom:3px}
+
+  .tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .tg{background:rgba(52,211,153,0.12);color:var(--green)}
+  .ti{background:rgba(129,140,248,0.12);color:var(--indigo)}
+  .tb{background:rgba(56,189,248,0.12);color:var(--blue)}
+  .ty{background:rgba(251,191,36,0.12);color:var(--yellow)}
+  .to{background:rgba(251,146,60,0.12);color:var(--orange)}
 
   footer{background:var(--surface);border-top:1px solid var(--border);margin-top:50px;padding:22px;font-size:11.5px;color:#4a5080;line-height:1.65}
   @media(max-width:700px){
     h1{font-size:2rem}
-    .kg,.cat-strip,.pip-grid,.clin-grid{grid-template-columns:repeat(2,1fr)}
-    .pg{grid-template-columns:1fr}
+    .kg,.partner-strip,.past-grid,.clin-grid,.pg{grid-template-columns:repeat(2,1fr)}
   }
 </style>
 </head>
@@ -162,155 +159,170 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="badge">🦻 Biotech · Thérapie génique auditive · SENS-501 OTOF · SENS-601 GJB2 · Sanofi 20 M€ · Tréso fin S1 2027</div>
+  <div class="badge">🦻 Biotech · Thérapie génique auditive · Plateforme Institut Pasteur EXCLUSIVE · Sanofi 20 M€ · SENS-501 Ph1/2 · SENS-601 CTA S1 2026</div>
   <h1>Sensor<span>ion</span></h1>
   <p class="hero-ct">Analyse CT / MT / LT — <strong>29/04/2026 18h43</strong> · PRT Fermé 17:34:59</p>
-  <p class="tagline">Société pionnière de biotechnologie au stade clinique, spécialisée dans la restauration et prévention des pertes auditives par thérapie génique. Pipeline : SENS-501 (OTOF · Audiogene Ph1/2) · SENS-601 (GJB2-GT · CTA S1 2026) · SENS-40 (SSNHL · Ph2b). Financement 60 M€ en janvier 2026 dont 20 M€ de Sanofi.</p>
+  <p class="tagline">Société pionnière de biotechnologie spécialisée dans la restauration des pertes auditives par thérapie génique. Titulaire d'un accord-cadre exclusif avec l'Institut Pasteur / Institut de l'Audition (Pr Christine Petit) jusqu'en 2028 — plateforme propriétaire de génération de candidats médicaments. Financement 60 M€ en janvier 2026 dont 20 M€ de Sanofi.</p>
 
   <div class="course-line">
     <span>0,3665 €</span>
     <span class="dn-b">▼ −1,87 %</span>
-    <span style="font-size:.85rem;color:var(--sub);font-family:'Exo 2',sans-serif;font-weight:400">ALSEN · Euronext Growth Paris · PEA-PME · Cap ~28 M€</span>
+    <span style="font-size:.85rem;color:var(--sub);font-family:'Exo 2',sans-serif;font-weight:400">ALSEN · Euronext Growth · PEA-PME · Cap ~28 M€</span>
   </div>
   <div class="hmeta">
-    <span>📅 <strong>29 avril 2026 — 18h43 · Fermé</strong></span>
+    <span>📅 <strong>29 avril 2026 — 18h43 · Clôture</strong></span>
     <span>📊 RSI : <strong>48,55</strong> neutre · MACD : <strong>+0,034</strong> ✅</span>
     <span>🔬 <strong>ISIN</strong> FR0012596468 · Montpellier, France</span>
-    <span>💹 Fib 23,6% (0,37€) = résistance CT immédiate · Cours en zone basse</span>
+    <span>💹 Consensus : 1,65 € (+350%) · Tréso runway fin S1 2027</span>
   </div>
 
-  <!-- SANOFI BOX -->
-  <div class="sanofi-box">
-    <div>
-      <div class="sb2-big">20 M€</div>
-      <div class="sb2-sub">Investissement Sanofi</div>
+  <div class="partner-strip">
+    <div class="ps pasteur">
+      <div class="psl">🧬 Institut Pasteur / Institut de l'Audition</div>
+      <div class="psv">Licences EXCLUSIVES</div>
+      <div class="pss">Accord-cadre 2019 → prolongé 2028 · Pr Christine Petit · 25 ans expertise mondiale · 2 programmes générés · Programmes additionnels avant 2028</div>
     </div>
-    <div class="sb2-txt">
-      Financement total de <strong>60 M€ en janvier 2026</strong>, incluant un investissement stratégique de Sanofi de 20 M€. Trésorerie ~47,5 M€ fin 2025 + 60 M€ levée = <strong>runway jusqu'à fin S1 2027</strong>. La validation par Sanofi (Big Pharma mondiale) de l'approche thérapeutique de Sensorion est un signal de crédibilité scientifique fort dans la thérapie génique auditive.
+    <div class="ps sanofi">
+      <div class="psl">💰 Sanofi — Investissement stratégique</div>
+      <div class="psv">20 M€ · janv. 2026</div>
+      <div class="pss">Big Pharma mondiale · partie du financement 60 M€ · Cap ALSEN = ~28 M€ · Sanofi seul a investi 20 M€</div>
     </div>
-  </div>
-
-  <div class="cat-strip">
-    <div class="cs g">
-      <div class="csl">✅ SENS-501 données 6M</div>
-      <div class="csv">Maintenues</div>
-      <div class="css2">2/3 patients dose haute · Cohorte 3 envisagée</div>
-    </div>
-    <div class="cs i">
-      <div class="csl">📋 SENS-601 CTA</div>
-      <div class="csv">S1 2026</div>
-      <div class="css2">GJB2 = 1ère cause surdité congénitale</div>
-    </div>
-    <div class="cs y">
-      <div class="csl">📅 AG Mixte</div>
-      <div class="csv">11 mai 2026</div>
-      <div class="css2">Dans 12 jours · Paris</div>
+    <div class="ps necker">
+      <div class="psl">🏥 Partenaires cliniques</div>
+      <div class="psv">Necker · ANR · Cochlear</div>
+      <div class="pss">Audiogene Ph1/2 · Fondation pour l'Audition · Cochlear Limited (SENS-40) · Consortium RHU Audinnove</div>
     </div>
   </div>
 
-  <p class="npc" style="margin-top:14px">⚠️ NPC — Analyse personnelle à titre informatif uniquement. Pas un conseil en investissement. Biotech clinique stade précoce = risque très élevé. DYOR.</p>
+  <p class="npc" style="margin-top:14px">⚠️ NPC — Analyse personnelle à titre informatif. Pas un conseil en investissement. Biotech clinique stade précoce = risque très élevé. DYOR.</p>
 </header>
 
 <!-- ALERTES -->
 <section>
-  <div class="stitle">Alertes</div>
+  <div class="stitle">Alertes — Points Clés Documentés</div>
+
+  <div class="alert ai">
+    <span class="ico">🧬</span>
+    <div><strong>Plateforme Institut Pasteur / Institut de l'Audition — Option de licences EXCLUSIVES — Accord prolongé 31/12/2028 — Moat structurel sous-valorisé</strong>
+    C'est le point le plus sous-estimé du dossier. L'accord-cadre signé en mai 2019 accorde à Sensorion une <strong>option de licences exclusives</strong> pour développer et commercialiser tous les candidats médicaments issus des projets collaboratifs avec l'Institut Pasteur — avant tout concurrent. En janvier 2024, l'accord a été prolongé de 5 ans jusqu'au 31 décembre 2028 afin de "promouvoir des programmes supplémentaires". L'accord implique l'<strong>Institut de l'Audition</strong>, centre de recherche de l'Institut Pasteur dirigé par le <strong>Pr Christine Petit</strong> — 25 ans d'expertise mondialement reconnue dans la génétique et physiopathologie de l'oreille interne. Deux programmes ont déjà émergé de cette plateforme : SENS-501 (OTOF · passé au stade clinique) et SENS-601 (GJB2-GT · CTA S1 2026). Un troisième programme est possible d'ici 2028. Clause notable : en cas de changement de contrôle non agréé par le CA de Sensorion, l'Institut Pasteur peut résilier l'accord — protection implicite contre OPA hostile.</div>
+  </div>
 
   <div class="alert ag">
     <span class="ico">🏭</span>
-    <div><strong>Financement 60 M€ en janvier 2026 dont 20 M€ Sanofi — Trésorerie étendue fin S1 2027 — Validation Big Pharma</strong>
-    En janvier 2026, Sensorion a bouclé un financement de 60 M€ incluant un investissement stratégique de 20 M€ de Sanofi. Ce ticket Sanofi est un signal de crédibilité extraordinaire pour une société de la taille de Sensorion : un des 5 premiers groupes pharmaceutiques mondiaux a choisi de co-financer et valider scientifiquement l'approche de thérapie génique auditive. La tréso post-financement étend le runway jusqu'à fin S1 2027 — la pression de financement est écartée pour ~14 mois.</div>
+    <div><strong>Sanofi investit 20 M€ en janvier 2026 · Financement total 60 M€ · Validation Big Pharma mondiale · Tréso runway fin S1 2027</strong>
+    Financement 60 M€ bouclé en janvier 2026, incluant 20 M€ de Sanofi comme investissement stratégique. Sanofi ne place pas 20 M€ sans une conviction scientifique interne forte. La capitalisation boursière actuelle de Sensorion est d'environ 28 M€ — soit moins que le seul ticket Sanofi. La tréso pré-financement (47,5 M€ fin 2025) combinée au financement 60 M€ étend le runway jusqu'à fin S1 2027. Pas de pression de financement contrainte pendant ~14 mois.</div>
   </div>
 
   <div class="alert ag">
     <span class="ico">👂</span>
-    <div><strong>SENS-501 (Audiogene) — Données 6 mois Cohorte 2 publiées 23/03/2026 · Améliorations maintenues · Signal dose-réponse · Sécurité confirmée</strong>
-    Les améliorations directionnelles précoces en audiométrie tonale rapportées à 3 mois chez 2 des 3 patients traités avec la dose la plus haute (Cohorte 2) se sont maintenues lors du suivi à 6 mois — un signal de durabilité important. La Cohorte 1 (dose plus basse) avait montré une activation de la voie auditive. Ces résultats suggèrent une relation dose-réponse. Sécurité confirmée : aucun événement indésirable grave chez les 6 nourrissons/jeunes enfants traités. Une Cohorte 3 à dose encore plus élevée est envisagée.</div>
+    <div><strong>SENS-501 (Audiogene) — Données 6 mois Cohorte 2 publiées 23/03/2026 · 2/3 patients dose haute · Durabilité confirmée · Signal dose-réponse · Cohorte 3 envisagée</strong>
+    Les améliorations en audiométrie tonale observées à 3 mois chez 2 des 3 patients de la Cohorte 2 (dose la plus haute) se sont maintenues lors du suivi à 6 mois — durabilité du signal démontrée. La Cohorte 1 (dose basse) avait montré une activation de la voie auditive. Ces deux cohortes ensemble tracent une relation dose-réponse. Sécurité exemplaire : aucun événement indésirable grave sur 6 nourrissons/jeunes enfants (6-31 mois). Une Cohorte 3 à dose encore plus élevée est envisagée pour maximiser l'effet clinique.</div>
   </div>
 
   <div class="alert ag">
     <span class="ico">🧬</span>
-    <div><strong>SENS-601 (GJB2-GT) — CTA S1 2026 · IND fin 2026 · GJB2 = 1ère cause surdité congénitale dans le monde</strong>
-    Le programme GJB2-GT cible la surdité liée aux mutations du gène GJB2 (connexine 26) — responsable d'environ 30-40% de tous les cas de surdité génétique dans le monde, soit la cause la plus fréquente. La soumission de la demande d'essai clinique (CTA) en Europe est attendue au S1 2026, et la soumission IND aux USA d'ici fin 2026. Les interactions réglementaires avec la FDA et l'EMA sont actives depuis le T3 2025.</div>
+    <div><strong>SENS-601 (GJB2-GT) — CTA S1 2026 IMMINENT · IND USA fin 2026 · GJB2 = 1ère cause mondiale de surdité génétique · Marché 30-40× plus large que OTOF</strong>
+    Deuxième programme issu de la plateforme Institut Pasteur (annoncé 2021, candidat sélectionné avril 2023). Le GJB2 (connexine 26) est responsable de 30 à 40% de l'ensemble des surdités génétiques dans le monde — de loin la cause la plus fréquente, contre ~1% pour OTOF (SENS-501). La soumission CTA en Europe est prévue au S1 2026, l'IND USA d'ici fin 2026. Interactions réglementaires FDA + EMA actives depuis le T3 2025. Le marché adressable de SENS-601 est massivement supérieur à SENS-501.</div>
   </div>
 
-  <div class="alert ai">
+  <div class="alert ab">
     <span class="ico">💊</span>
-    <div><strong>SENS-40 (petite molécule) — Phase 2b SSNHL + Phase 2a implant cochléaire + Phase 2a cisplatine — 3 indications</strong>
-    En parallèle de la thérapie génique, Sensorion développe SENS-40, une petite molécule (olipudase alpha analogue) en Phase 2b dans la surdité sensorielle soudaine (SSNHL), en Phase 2a pour prévenir la perte auditive résiduelle lors de l'implantation cochléaire, et en Phase 2a pour prévenir l'ototoxicité au cisplatine (chimiothérapie). Ces trois indications constituent des opportunités de valeur additionnelle au pipeline de thérapie génique.</div>
+    <div><strong>SENS-40 — 3 indications en Phase 2 simultanément · SSNHL + implant cochléaire + cisplatine · Cochlear Limited partenaire</strong>
+    En parallèle de la thérapie génique, SENS-40 (petite molécule) progresse en Phase 2b dans la surdité sensorielle soudaine (SSNHL), en Phase 2a pour prévenir la perte auditive lors de l'implantation cochléaire (en partenariat avec Cochlear Limited, leader mondial des implants), et en Phase 2a pour prévenir l'ototoxicité induite par le cisplatine. Pipeline diversifié avec des horizons temporels plus courts que la thérapie génique.</div>
   </div>
 
   <div class="alert aw">
     <span class="ico">⚠️</span>
-    <div><strong>Cours sous le 23,6% Fibonacci (0,37 €) · Zone basse historique · Biotech stade précoce · Dilution structurelle possible</strong>
-    Le cours à 0,3665 € est en dessous du 23,6% Fib (0,37 €) — zone basse absolue sur l'historique récent. La société reste en phase clinique précoce (Phase 1/2 pour SENS-501, préclinique pour SENS-601) avec des données encourageantes mais pas encore de Phase 3. Le consensus à 1,65 € intègre un succès clinique complet — l'écart entre cours et consensus reflète le risque binaire de la thérapie génique. Les prochaines levées de fonds futures (post S1 2027) seront probablement dilutives.</div>
+    <div><strong>Cours sous le 23,6% Fibonacci (0,37 €) · Biotech stade précoce · n faibles en Phase 1/2 · Concurrence bien financée · Levée post-S1 2027 nécessaire</strong>
+    Le cours à 0,3665 € est sous le 23,6% Fib — zone basse. Le dossier reste un pari clinique à risque binaire. Les résultats Phase 1/2 sont encourageants mais restent sur des n faibles (3 patients par cohorte). La route vers Phase 3 puis AMM est encore longue (5-8 ans minimum). La concurrence de Regeneron (Akouos), Lilly (Decibel) et GenOtof dispose de moyens financiers sans commune mesure. Une nouvelle levée sera nécessaire après S1 2027 — sizing adapté en conséquence.</div>
   </div>
 
-  <div class="alert ab">
+  <div class="alert ai">
     <span class="ico">📅</span>
-    <div><strong>AG Mixte le 11 mai 2026 — Dans 12 jours — Paris · Hôtel Square Louvois</strong>
-    L'Assemblée Générale Mixte annuelle se tiendra le lundi 11 mai 2026 à 14h00 CET, au Square Louvois, 12 rue de Louvois, Paris 75002. Les documents préparatoires ont été mis à disposition récemment. Cette AG sera l'occasion de faire le point sur la stratégie et les prochaines étapes.</div>
+    <div><strong>AG Mixte le 11 mai 2026 — Dans 12 jours — Paris · Square Louvois · 14h00 CET</strong>
+    Assemblée Générale Mixte annuelle. Documents préparatoires mis à disposition. Opportunité de mise à jour stratégique complète sur le pipeline.</div>
   </div>
 </section>
 
 <!-- KPI -->
 <section>
-  <div class="stitle">KPIs Clés — Sources Vérifiées 29/04/2026</div>
+  <div class="stitle">KPIs Clés — 29/04/2026</div>
   <div class="kg">
     <div class="kpi"><div class="kl">Cours clôture</div><div class="kv">0,3665 €</div><div class="kd kdn">▼ −1,87%</div><div class="ks">PRT Fermé 17:34</div></div>
-    <div class="kpi"><div class="kl">RSI(14)</div><div class="kv">48,55</div><div class="kd kn">Neutre</div><div class="ks">Ni surachat ni survente</div></div>
-    <div class="kpi"><div class="kl">MACD ZéroLag</div><div class="kv">+0,034</div><div class="kd ku">✅ Légèrement +</div><div class="ks">Signal positif CT</div></div>
+    <div class="kpi"><div class="kl">RSI(14)</div><div class="kv">48,55</div><div class="kd kn">Neutre</div><div class="ks">Marge haussière modérée</div></div>
+    <div class="kpi"><div class="kl">MACD ZéroLag</div><div class="kv">+0,034</div><div class="kd ku">✅ Positif</div><div class="ks">Signal CT haussier</div></div>
+    <div class="kpi"><div class="kl">Accord Pasteur</div><div class="kv">Exclusif</div><div class="kd ki">Prolongé 2028</div><div class="ks">Licences excl. · 2 pgms générés</div></div>
+    <div class="kpi"><div class="kl">Sanofi investit</div><div class="kv">20 M€</div><div class="kd ku">vs Cap ~28 M€ !</div><div class="ks">Validation Big Pharma</div></div>
+    <div class="kpi"><div class="kl">Tréso runway</div><div class="kv">Fin S1 2027</div><div class="kd ku">~14 mois</div><div class="ks">Post-financement 60 M€</div></div>
+    <div class="kpi"><div class="kl">SENS-501 (6M C2)</div><div class="kv">2/3 ✅</div><div class="kd ku">Durabilité</div><div class="ks">Signal dose-réponse</div></div>
+    <div class="kpi"><div class="kl">SENS-601 CTA</div><div class="kv">S1 2026</div><div class="kd kw">Imminent</div><div class="ks">GJB2 · 1ère cause mondiale</div></div>
     <div class="kpi"><div class="kl">Fib 23,6% (rés.)</div><div class="kv">0,37 €</div><div class="kd kdn">Cours en dessous</div><div class="ks">Résistance immédiate</div></div>
-    <div class="kpi"><div class="kl">Fib 38,2% (cible)</div><div class="kv">0,5005 €</div><div class="kd ki">+37% depuis cours</div><div class="ks">Cible CT</div></div>
-    <div class="kpi"><div class="kl">Financement janv. 26</div><div class="kv">60 M€</div><div class="kd ku">dont Sanofi 20 M€</div><div class="ks">Runway fin S1 2027</div></div>
-    <div class="kpi"><div class="kl">Tréso 31/12/2025</div><div class="kv">47,5 M€</div><div class="kd ku">Post-levée ~75-80 M€e</div><div class="ks">Avant financement janv.</div></div>
-    <div class="kpi"><div class="kl">SENS-501 Cohorte 2</div><div class="kv">2/3 ✅</div><div class="kd ku">Maintien à 6 mois</div><div class="ks">23/03/2026</div></div>
-    <div class="kpi"><div class="kl">SENS-601 CTA</div><div class="kv">S1 2026</div><div class="kd kw">Imminent</div><div class="ks">GJB2 = 1ère cause surdité</div></div>
-    <div class="kpi"><div class="kl">Consensus</div><div class="kv">1,65 €</div><div class="kd ku">+350% upside</div><div class="ks">Boursorama</div></div>
-    <div class="kpi"><div class="kl">AG Mixte</div><div class="kv">11 mai</div><div class="kd kw">Dans 12 jours</div><div class="ks">Paris · 14h00</div></div>
-    <div class="kpi"><div class="kl">52S bas</div><div class="kv">0,159 €</div><div class="kd ku">Plancher absolu</div><div class="ks">Support ultime</div></div>
+    <div class="kpi"><div class="kl">Fib 38,2% (cible)</div><div class="kv">0,5005 €</div><div class="kd ki">+37%</div><div class="ks">Si 0,37€ franchi</div></div>
+    <div class="kpi"><div class="kl">Consensus</div><div class="kv">1,65 €</div><div class="kd ku">+350%</div><div class="ks">Boursorama · risque binaire intégré</div></div>
+    <div class="kpi"><div class="kl">AG Mixte</div><div class="kv">11 mai</div><div class="kd kw">Dans 12 jours</div><div class="ks">Paris · 14h00 CET</div></div>
   </div>
 </section>
 
-<!-- DONNÉES CLINIQUES SENS-501 -->
+<!-- PLATEFORME PASTEUR -->
 <section>
-  <div class="stitle">SENS-501 (Audiogene) — Données 6 mois Cohorte 2 · 23/03/2026</div>
-  <div class="clin-box">
-    <h3 style="color:var(--green);font-size:1.1rem;margin-bottom:6px">👂 Essai Audiogene Phase 1/2 · SENS-501 · Surdité congénitale OTOF · Données maintenues à 6 mois</h3>
-    <p style="color:#a7f3d0;font-size:13.5px;margin-bottom:4px">Partenaires : Hôpital Necker-Enfants Malades · Institut Pasteur · Fondation pour l'Audition · Financement ANR</p>
-    <div class="clin-grid">
-      <div class="ck">
-        <div class="ckl">Patients Cohorte 2</div>
-        <div class="ckv">3 patients</div>
-        <div class="cks">Dose la plus haute</div>
+  <div class="stitle">Plateforme Institut Pasteur — Le Moat Structurel Sous-Valorisé</div>
+  <div class="pasteur-box">
+    <h3 style="color:var(--indigo);font-size:1.1rem;margin-bottom:6px">🧬 Accord-cadre exclusif avec l'Institut Pasteur / Institut de l'Audition · 2019 → Prolongé 31/12/2028</h3>
+    <p style="color:#c7d2fe;font-size:13.5px;margin-bottom:6px">Sensorion détient une <strong style="color:var(--indigo)">option de licences exclusives</strong> sur l'ensemble des candidats médicaments issus de la collaboration — avant tout concurrent mondial. Ce n'est pas un simple accord académique : c'est une usine propriétaire à candidats médicaments.</p>
+    <div class="past-grid">
+      <div class="pk"><div class="pkl">Structure</div><div class="pkv">Licences excl.</div><div class="pks">Option commercialisation exclusive sur tous les candidats</div></div>
+      <div class="pk"><div class="pkl">Durée</div><div class="pkv">Jusqu'en 2028</div><div class="pks">Prolongé 5 ans en jan. 2024</div></div>
+      <div class="pk"><div class="pkl">Programmes générés</div><div class="pkv">2 à ce jour</div><div class="pks">SENS-501 (clinique) + SENS-601 (CTA 2026)</div></div>
+      <div class="pk"><div class="pkl">Expert scientifique</div><div class="pkv">Pr C. Petit</div><div class="pks">25 ans · référence mondiale en génétique auditive</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:16px;font-size:13px;color:#c7d2fe;line-height:1.65">
+        <strong style="color:var(--indigo)">Ce que cette plateforme confère à Sensorion :</strong><br>
+        › Accès exclusif à toutes les découvertes de l'équipe Pasteur en thérapie génique auditive<br>
+        › Les meilleurs chercheurs mondiaux en génétique de l'oreille interne travaillent au profit de Sensorion<br>
+        › Track record : 2 programmes cliniques générés en 5 ans<br>
+        › Programmes supplémentaires explicitement prévus avant 2028<br>
+        › Clause résiliation si changement de contrôle non agréé → protection contre OPA hostile
       </div>
-      <div class="ck">
-        <div class="ckl">Signal maintenu à 6M</div>
-        <div class="ckv">2 / 3 ✅</div>
-        <div class="cks">Améliorations audiométriques durables</div>
-      </div>
-      <div class="ck">
-        <div class="ckl">Sécurité</div>
-        <div class="ckv">✅ Confirmée</div>
-        <div class="cks">0 événement grave · 6 patients</div>
+      <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.18);border-radius:10px;padding:16px;font-size:13px;color:#a7f3d0;line-height:1.65">
+        <strong style="color:var(--green)">Pourquoi c'est sous-valorisé :</strong><br>
+        › Cap Sensorion ~28 M€ = valeur d'une seule levée de fonds<br>
+        › Sanofi a investi 20 M€ seul dans la dernière levée (71% de la cap !)<br>
+        › Aucun concurrent européen n'a accès à cette plateforme<br>
+        › GJB2 (SENS-601 · 2e programme) = marché 30-40× plus large que OTOF<br>
+        › 3e programme potentiel d'ici 2028 = optionalité non valorisée dans le cours
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px">
-      <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.18);border-radius:8px;padding:14px;font-size:13px;color:#a7f3d0;line-height:1.6">
+  </div>
+</section>
+
+<!-- DONNÉES CLINIQUES -->
+<section>
+  <div class="stitle">SENS-501 (Audiogene) — Phase 1/2 · Données 6 mois Cohorte 2 · 23/03/2026</div>
+  <div class="clin-box">
+    <h3 style="color:var(--green);font-size:1rem;font-weight:700;margin-bottom:6px">👂 Essai Audiogene · OTOF · Necker + Pasteur + ANR · Patients 6-31 mois</h3>
+    <p style="color:#a7f3d0;font-size:13px;margin-bottom:4px">Thérapie génique OTOF : injection intra-cochléaire d'une copie fonctionnelle du gène de l'otoferline. Objectif : restaurer l'audition à l'âge où la plasticité cérébrale maximise les chances d'acquisition du langage.</p>
+    <div class="clin-grid">
+      <div class="ck"><div class="ckl">Signal maintenu 6M</div><div class="ckv">2 / 3 ✅</div><div class="cks">Patients Cohorte 2 · dose haute</div></div>
+      <div class="ck"><div class="ckl">Sécurité</div><div class="ckv">✅ 0 EIG</div><div class="cks">6 patients · aucun événement grave</div></div>
+      <div class="ck"><div class="ckl">Prochaine étape</div><div class="ckv">Cohorte 3</div><div class="cks">Dose encore plus haute · envisagée</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.15);border-radius:8px;padding:14px;font-size:13px;color:#a7f3d0;line-height:1.6">
         <strong style="color:var(--green)">Points positifs :</strong><br>
-        › Améliorations T3M maintenues à T6M<br>
-        › Signal de relation dose-réponse émergent<br>
-        › Cohorte 1 (dose basse) : activation voie auditive<br>
-        › Sécurité excellente sur 6 patients (6-31 mois)<br>
-        › Cohorte 3 (dose plus haute) envisagée<br>
-        › Concordance avec données concurrents (Akouos/Regeneron, Decibel/Lilly)
+        › Durabilité : améliorations T3M maintenues à T6M<br>
+        › Relation dose-réponse entre C1 et C2<br>
+        › 0 événement indésirable grave sur 6 patients<br>
+        › Concordance avec les données des concurrents (Akouos, Decibel) sur OTOF<br>
+        › Cohorte 3 : potentiel d'amélioration encore supérieure
       </div>
-      <div style="background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.18);border-radius:8px;padding:14px;font-size:13px;color:#fde68a;line-height:1.6">
-        <strong style="color:var(--yellow)">Limites et nuances :</strong><br>
-        › Phase 1/2 · n faible (3 patients Cohorte 2)<br>
-        › "Améliorations directionnelles" · pas de guérison confirmée<br>
-        › 1 patient sur 3 sans amélioration à la dose haute<br>
-        › Parcours long vers Phase 3 puis enregistrement<br>
-        › Concurrence : Akouos (Regeneron), Decibel (Lilly), GenOtof (chine)
+      <div style="background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.15);border-radius:8px;padding:14px;font-size:13px;color:#fde68a;line-height:1.6">
+        <strong style="color:var(--yellow)">Nuances :</strong><br>
+        › Phase 1/2 · n très faible (3 patients C2)<br>
+        › "Améliorations directionnelles" · pas de guérison totale<br>
+        › 1/3 patient sans amélioration à la dose haute<br>
+        › OTOF = 1% des surdités génétiques (marché limité)<br>
+        › SENS-601 (GJB2) = programme LT à bien plus grand potentiel
       </div>
     </div>
   </div>
@@ -318,40 +330,41 @@
 
 <!-- PIPELINE -->
 <section>
-  <div class="stitle">Pipeline Clinique Complet</div>
-  <div class="pip-grid">
-    <div class="pp s501">
-      <h3>🟢 SENS-501 · OTOF · Audiogene</h3>
-      <ul>
-        <li>Surdité congénitale OTOF · Phase 1/2</li>
-        <li>Cohorte 1 (dose basse) : activation voie auditive ✓</li>
-        <li>Cohorte 2 (dose haute) : 2/3 · maintenu 6M ✓</li>
-        <li>Cohorte 3 (dose + haute) : envisagée</li>
-        <li>Âge : 6-31 mois (plasticité cérébrale)</li>
-        <li>Partenaires : Necker · Pasteur · ANR</li>
-      </ul>
-    </div>
-    <div class="pp s601">
-      <h3>🟣 SENS-601 · GJB2-GT · 1ère cause</h3>
-      <ul>
-        <li>GJB2 = 30-40% des surdités génétiques mondiales</li>
-        <li>Interactions FDA + EMA depuis T3 2025</li>
-        <li>Soumission CTA Europe : <strong style="color:var(--indigo)">S1 2026</strong></li>
-        <li>Soumission IND USA : fin 2026</li>
-        <li>Préclinique → Phase 1 imminent</li>
-        <li>Marché adressable >> OTOF</li>
-      </ul>
-    </div>
-    <div class="pp s40">
-      <h3>🔵 SENS-40 · Petite molécule</h3>
-      <ul>
-        <li>SSNHL (surdité soudaine) · Phase 2b</li>
-        <li>Prévention perte auditive implant cochléaire · Ph2a</li>
-        <li>Prévention ototoxicité cisplatine · Ph2a</li>
-        <li>3 indications en cours simultanément</li>
-        <li>Calendrier résultats à préciser</li>
-      </ul>
-    </div>
+  <div class="stitle">Pipeline Complet — 3 Programmes · 2 Modalités</div>
+  <div class="dt">
+    <table>
+      <thead><tr><th>Programme</th><th>Indication / Gène cible</th><th>Stade</th><th>Prochaine étape</th><th>Origine</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:var(--heading)">SENS-501 (OTOF-GT)</strong></td>
+          <td>Surdité congénitale OTOF · ~1% des cas</td>
+          <td><span class="tag tg">Phase 1/2</span></td>
+          <td style="color:var(--yellow)">Cohorte 3 · données durabilité</td>
+          <td><span class="tag ti">Plateforme Pasteur</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--heading)">SENS-601 (GJB2-GT)</strong></td>
+          <td>Surdité congénitale GJB2 · <strong>30-40% des cas</strong></td>
+          <td><span class="tag ty">Préclinique → CTA</span></td>
+          <td style="color:var(--yellow)"><strong>CTA S1 2026 · IND fin 2026</strong></td>
+          <td><span class="tag ti">Plateforme Pasteur</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--heading)">SENS-40</strong></td>
+          <td>SSNHL · Implant cochléaire · Cisplatine</td>
+          <td><span class="tag tb">Phase 2b / 2a (×3)</span></td>
+          <td style="color:#6872a8">Données Phase 2b SSNHL</td>
+          <td><span class="tag to">Interne</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--heading)">Programme 3+ (futur)</strong></td>
+          <td>Autre surdité génétique · TBD</td>
+          <td><span class="tag ti">Recherche</span></td>
+          <td style="color:#6872a8">Avant 2028 · accord-cadre</td>
+          <td><span class="tag ti">Plateforme Pasteur</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -360,20 +373,16 @@
   <div class="stitle">Analyse Technique — Fibonacci (1S · PRT)</div>
   <div class="fw">
     <h3>Fib (0,159€ = 0% → ~1,10€ = 100%) — Cours 0,3665€ sous le 23,6% (0,37€) · Zone basse</h3>
-    <p>Le cours est légèrement sous le 23,6% Fibonacci (0,37 €) — résistance immédiate. RSI neutre à 48,55. MACD légèrement positif. La configuration technique est neutre-légèrement positive malgré la position basse absolue.</p>
-
-    <div class="frow ath"><div class="flvl">100% — Sommet historique</div><div class="fbw"><div class="fb" style="width:100%;background:rgba(251,191,36,0.3)"></div></div><div class="fp">~1,10 €</div></div>
-    <div class="frow res"><div class="flvl">61,8% — Golden Ratio</div><div class="fbw"><div class="fb" style="width:61.8%;background:rgba(56,189,248,0.3)"></div></div><div class="fp">0,7115 € ← cible MT</div></div>
+    <p>RSI 48,55 neutre · MACD légèrement positif. Pas de survente franche mais zone basse. Les catalyseurs cliniques priment sur la technique pour ce type de dossier.</p>
+    <div class="frow ath"><div class="flvl">100% Sommet hist.</div><div class="fbw"><div class="fb" style="width:100%;background:rgba(251,191,36,0.3)"></div></div><div class="fp">~1,10 € · consensus 1,65€</div></div>
+    <div class="frow res"><div class="flvl">61,8% Golden Ratio</div><div class="fbw"><div class="fb" style="width:61.8%;background:rgba(56,189,248,0.3)"></div></div><div class="fp">0,7115 € ← cible MT</div></div>
     <div class="frow res"><div class="flvl">50%</div><div class="fbw"><div class="fb" style="width:50%;background:rgba(56,189,248,0.25)"></div></div><div class="fp">0,606 €</div></div>
-    <div class="frow res"><div class="flvl">38,2% — Cible CT</div><div class="fbw"><div class="fb" style="width:38.2%;background:rgba(56,189,248,0.35)"></div></div><div class="fp">0,5005 € ← +37%</div></div>
-    <div class="frow res"><div class="flvl">23,6% — Résistance imm.</div><div class="fbw"><div class="fb" style="width:23.6%;background:rgba(56,189,248,0.4)"></div></div><div class="fp">0,37 € ← à franchir</div></div>
-    <div class="frow cours"><div class="flvl">↑ Cours actuel</div><div class="fbw"><div class="fb" style="width:21.3%"></div></div><div class="fp">0,3665 € ←</div></div>
-    <div class="frow sup"><div class="flvl">Horizontal PRT</div><div class="fbw"><div class="fb" style="width:16%;background:rgba(52,211,153,0.3)"></div></div><div class="fp">0,3 € ← support</div></div>
-    <div class="frow sup"><div class="flvl">0% — Plancher absolu</div><div class="fbw"><div class="fb" style="width:1%;background:rgba(52,211,153,0.2)"></div></div><div class="fp">0,159 €</div></div>
-
-    <div class="fnote">
-      <strong style="color:var(--indigo)">Lecture technique 29/04 :</strong> Cours à 0,3665 € légèrement sous la résistance du 23,6% Fib (0,37 €). <strong>Signal technique clé : franchissement en clôture de 0,37 €</strong> → retour dans la structure Fibonacci, premier objectif 0,5005 € (38,2% Fib = +37%). RSI 48,55 = neutre, pas de biais fort. MACD +0,034 = légèrement positif. <strong>Support court terme : 0,30 € (horizontal PRT)</strong>. Support ultime : 0,159 € (plancher absolu). Sur le graphique, les horizontaux PRT montrent aussi 0,5405 € et 0,4905 € comme résistances intermédiaires. L'horizontal rouge à 1,00 € (visible en haut du graphique) constitue la résistance psychologique majeure LT.
-    </div>
+    <div class="frow res"><div class="flvl">38,2% Cible CT</div><div class="fbw"><div class="fb" style="width:38.2%;background:rgba(56,189,248,0.4)"></div></div><div class="fp">0,5005 € ← +37%</div></div>
+    <div class="frow res"><div class="flvl">23,6% Résistance imm.</div><div class="fbw"><div class="fb" style="width:23.6%;background:rgba(56,189,248,0.5)"></div></div><div class="fp">0,37 € ← à franchir</div></div>
+    <div class="frow cours"><div class="flvl">↑ Cours</div><div class="fbw"><div class="fb" style="width:21.3%"></div></div><div class="fp">0,3665 € ←</div></div>
+    <div class="frow sup"><div class="flvl">Horizontal PRT</div><div class="fbw"><div class="fb" style="width:16%;background:rgba(52,211,153,0.3)"></div></div><div class="fp">0,30 € ← support CT</div></div>
+    <div class="frow sup"><div class="flvl">0% Plancher absolu</div><div class="fbw"><div class="fb" style="width:1%;background:rgba(52,211,153,0.2)"></div></div><div class="fp">0,159 €</div></div>
+    <div class="fnote"><strong style="color:var(--indigo)">Lecture :</strong> Cours légèrement sous 0,37 € (23,6% Fib = résistance immédiate). <strong>Signal technique clé : franchissement 0,37 € en clôture</strong> → objectif CT 0,5005 € (+37%). Support CT : 0,30 € (PRT). Résistances intermédiaires PRT : 0,4905 € · 0,5405 €. Horizontal rouge PRT à 1,00 € = résistance psychologique LT. Sur ce type de dossier, les catalyseurs cliniques (CTA SENS-601, données Cohorte 3) seront le vrai déclencheur — pas les indicateurs techniques seuls.</div>
   </div>
 </section>
 
@@ -383,38 +392,38 @@
   <div class="pg">
     <div class="pc">
       <h4 class="pct">Court Terme</h4>
-      <div class="hor">Horizon 1–8 semaines</div>
+      <div class="hor">1–8 semaines</div>
       <ul>
         <li>AG 11 mai 2026 · Mise à jour stratégie</li>
-        <li>Résistance CT : 0,37 € (23,6% Fib)</li>
+        <li>CTA SENS-601 : soumission imminente</li>
+        <li>Résistance : 0,37 € (23,6% Fib)</li>
         <li>Support : 0,30 € (horizontal PRT)</li>
-        <li>SENS-601 CTA : soumission S1 2026 imminente</li>
-        <li>RSI 48,55 · marge haussière modérée</li>
-        <li>Faible liquidité Euronext Growth</li>
+        <li>RSI 48,55 · marge disponible</li>
+        <li>Faible liquidité → amplitude forte</li>
       </ul>
     </div>
     <div class="pc">
       <h4 class="pmt">Moyen Terme</h4>
-      <div class="hor">Horizon 3–12 mois</div>
+      <div class="hor">3–12 mois</div>
       <ul>
         <li>SENS-601 IND USA : fin 2026</li>
-        <li>SENS-501 Cohorte 3 : données à venir</li>
-        <li>SENS-40 : données Phase 2b SSNHL</li>
-        <li>Tréso sécurisée fin S1 2027</li>
-        <li>Cible MT : 0,5005 € (38,2% Fib) puis 0,606 € (50%)</li>
-        <li>Conférence ASGCT (gène thérapie) prévue</li>
+        <li>SENS-501 Cohorte 3 : données</li>
+        <li>SENS-40 Phase 2b SSNHL : résultats</li>
+        <li>Tréso sécurisée · pas de dilution forcée</li>
+        <li>Cibles : 0,5005 € → 0,606 € (50%)</li>
+        <li>3e programme Pasteur possible</li>
       </ul>
     </div>
     <div class="pc">
       <h4 class="plt">Long Terme</h4>
-      <div class="hor">Horizon 1–4 ans</div>
+      <div class="hor">2–5 ans</div>
       <ul>
-        <li>Phase 2/3 SENS-501 si Cohorte 3 positive</li>
-        <li>SENS-601 : Phase 1 puis Phase 2 GJB2</li>
-        <li>Partenariat/deal potentiel post-données</li>
-        <li>Consensus : 1,65 € (+350%)</li>
-        <li>Résistance LT : 0,7115 € (61,8% Fib)</li>
-        <li>⚠️ Besoin de financement post S1 2027</li>
+        <li>Phase 2/3 SENS-501 si C3 positive</li>
+        <li>SENS-601 Phase 1 · puis Phase 2</li>
+        <li>Partenariat/deal Big Pharma post-données</li>
+        <li>Plateforme Pasteur : 3e programme avant 2028</li>
+        <li>Consensus 1,65 € · Golden Ratio 0,71 €</li>
+        <li>⚠️ Levée nécessaire post-S1 2027</li>
       </ul>
     </div>
   </div>
@@ -425,53 +434,51 @@
   <div class="stitle">Mon Avis Personnel</div>
   <div class="verdict">
     <div class="sw">
-      <div class="sb3">
-        <div class="sn">6</div>
+      <div class="sb">
+        <div class="sn">7</div>
         <div class="sl">/10</div>
       </div>
       <div class="sd">
-        <strong>Pipeline thérapie génique crédible · Ticket Sanofi 20 M€ = validation scientifique forte · Données SENS-501 encourageantes mais stade très précoce · Cours en zone basse · Risque binaire clinique élevé</strong>
+        <strong>Score relevé à 7/10 — La plateforme exclusive Pasteur change fondamentalement l'analyse · Sanofi 20 M€ = Cap totale Sensorion · SENS-601 GJB2 = marché 30-40× plus large · Cours en zone basse = potentiel asymétrique élevé si les jalons cliniques sont tenus</strong>
       </div>
     </div>
 
-    <h3>La thèse thérapie génique auditive reste intacte :</h3>
-    <p>Sensorion opère dans un segment de thérapie génique auditive qui est en train de se transformer : le premier succès mondial de la thérapie génique OTOF a été annoncé en 2023 (équipe de Zheng-Yi Chen à Boston avec une co-administration bilatérale), et depuis plusieurs acteurs (Akouos/Regeneron, Decibel/Lilly, GenOtof) ont publié des résultats similaires. Sensorion, avec son essai Audiogene réalisé avec l'Hôpital Necker et l'Institut Pasteur, s'inscrit dans cette dynamique avec des données cliniques de Phase 1/2 encourageantes. La durabilité des améliorations à 6 mois chez 2/3 des patients de la Cohorte 2 est un signal positif. Le SENS-601 (GJB2), avec sa CTA imminente, adresse le marché le plus large de la surdité génétique. L'investissement de Sanofi à 20 M€ est le signal industriel le plus fort : Big Pharma ne met pas 20 M€ dans un programme sans une thèse interne très convaincante.</p>
+    <h3>Pourquoi la plateforme Pasteur change tout :</h3>
+    <p>La plupart des analyses s'arrêtent aux données cliniques de SENS-501 — et passent à côté de l'essentiel. L'accord-cadre exclusif avec l'Institut Pasteur est une barrière à l'entrée durable que les concurrents (Regeneron, Lilly) ne peuvent tout simplement pas reproduire. Le Pr Christine Petit et son équipe à l'Institut de l'Audition ont consacré 25 ans à découvrir les bases génétiques des surdités héréditaires — et Sensorion est le seul acteur mondial qui a une option exclusive sur l'ensemble de leurs travaux en thérapie génique. Deux programmes en sont déjà sortis, et des programmes supplémentaires sont explicitement prévus avant 2028. SENS-601 (GJB2), le deuxième programme issu de cette plateforme, adresse 30 à 40% de l'ensemble des surdités génétiques dans le monde — un marché 30 à 40 fois plus large que OTOF. Sa soumission CTA est imminente. Un troisième programme d'ici 2028 est une optionalité réelle et non valorisée dans le cours actuel.</p>
 
-    <h3 style="margin-top:14px">Les limites objectives :</h3>
-    <p>La thérapie génique auditive est encore à ses débuts. Les n des cohortes sont très faibles (3 patients par niveau de dose), les améliorations sont "directionnelles" et non pas des guérisons confirmées, et la route vers la commercialisation (Phase 2 → Phase 3 → AMM) est encore longue — probablement 5 à 8 ans minimum. La trésorerie sécurisée jusqu'à fin S1 2027 laisse 14 mois pour démontrer la valeur du pipeline avant qu'une nouvelle levée soit nécessaire. La concurrence de Regeneron (Akouos) et Lilly (Decibel) avec des moyens financiers sans comparaison avec Sensorion est réelle. Le cours à 0,3665 €, sous le 23,6% Fibonacci, reflète un sentiment très baissier qui peut être renversé par un catalyseur clinique positif.</p>
+    <h3 style="margin-top:14px">Le signal Sanofi est extraordinaire :</h3>
+    <p>Sanofi a investi 20 M€ dans le tour de table de janvier 2026. La capitalisation boursière actuelle de Sensorion est de ~28 M€. Autrement dit, le seul ticket Sanofi représente 71% de la capitalisation boursière totale — et Sanofi ne met pas 20 M€ dans un programme sans une conviction scientifique interne documentée. C'est le signal industriel le plus fort disponible sur ce dossier. Si Sanofi décide d'approfondir son engagement au fil des données cliniques, un partenariat ou une acquisition pourrait se profiler à terme. Le cours actuel à 0,3665 € intègre une prime de risque extrêmement élevée — peut-être excessive au vu de la solidité de la plateforme sous-jacente.</p>
 
     <div class="conclu">
       <span class="clabel">⚡ Niveaux Techniques & Catalyseurs</span>
-      <span class="cline">COURS : 0,3665 € · RÉSISTANCE CT : 0,37 € (23,6% Fib) · SUPPORT : 0,30 € (horizontal PRT) · PLANCHER ABSOLU : 0,159 €</span>
-      <span class="cline">CIBLES : 0,5005 € (38,2% Fib · +37%) → 0,606 € (50%) → 0,7115 € (61,8% Golden Ratio)</span>
+      <span class="cline">COURS : 0,3665 € · RÉSISTANCE CT : 0,37 € (23,6% Fib) · SUPPORT CT : 0,30 € (PRT) · PLANCHER ABS. : 0,159 €</span>
+      <span class="cline">CIBLES : 0,5005 € (38,2% · +37%) → 0,606 € (50%) → 0,7115 € (61,8% Golden Ratio)</span>
       <span style="color:#fde68a">
-        📅 <strong style="color:var(--yellow)">11 mai 2026</strong> : AG Mixte · Mise à jour stratégie<br>
-        ⚡ <strong style="color:var(--yellow)">S1 2026 (imminent)</strong> : CTA SENS-601 (GJB2) · 1ère cause surdité congénitale mondiale<br>
-        ⚡ <strong style="color:var(--yellow)">À venir</strong> : Données Cohorte 3 SENS-501 · Données SENS-40 Phase 2b SSNHL<br>
-        🎯 Signal technique haussier : franchissement 0,37 € en clôture → objectif 0,5005 €<br>
-        🏭 Ticket Sanofi 20 M€ = validation scientifique forte · Runway fin S1 2027<br>
-        ⚠️ Stade clinique très précoce · Risque binaire clinique · Financement post S1 2027 à prévoir<br>
-        ⚠️ Concurrence : Regeneron (Akouos) · Lilly (Decibel) · GenOtof
+        🧬 <strong style="color:var(--indigo)">Moat #1 (sous-valorisé)</strong> : Plateforme Institut Pasteur exclusive · Licences excl. · Pr Christine Petit · Prolongée 2028 · 3e programme potentiel<br>
+        💰 <strong style="color:var(--green)">Moat #2</strong> : Sanofi 20 M€ = 71% de la cap actuelle · Validation scientifique Big Pharma<br>
+        📅 <strong style="color:var(--yellow)">IMMINENT — S1 2026</strong> : CTA SENS-601 (GJB2 · 1ère cause surdité congénitale mondiale · 30-40%)<br>
+        📅 <strong style="color:var(--yellow)">11 mai 2026</strong> : AG Mixte · Mise à jour pipeline<br>
+        ⚡ <strong style="color:var(--yellow)">Catalyseur majeur</strong> : Données Cohorte 3 SENS-501 · si positives → retournement de sentiment<br>
+        🎯 Signal haussier clé : franchissement 0,37 € (23,6% Fib) en clôture<br>
+        ⚠️ Stade précoce · Risque binaire clinique · Levée post-S1 2027 · Concurrence Regeneron + Lilly
       </span>
     </div>
   </div>
 </section>
 
 </div>
-
 <footer>
   <div style="max-width:980px;margin:0 auto;padding:0 20px">
     <strong style="color:#6872a8;font-size:12px">Sources documentées et vérifiées :</strong><br>
-    Graphique ProRealTime 1S ALSEN (29/04/2026 17:34, Fermé) · RSI 48,55 · MACD Zéro Lag +0,034 · Cours 0,3665€ (−1,87%) · Fib (0,159€=0% → ~1,10€=100%) · 23,6% = 0,37€ · 38,2% = 0,5005€ · 50% = 0,606€ · 61,8% = 0,7115€ · Page Boursorama ALSEN (consensus 1,65 €) ·
-    <strong>Résultats FY2025 (18/03/2026) :</strong> Tréso 31/12/2025 : 47,5 M€ (vs 77 M€ fin 2024 dont dépôt CT 10,2 M€) · Financement 60 M€ janvier 2026 dont investissement stratégique Sanofi 20 M€ · Tréso étendue fin S1 2027 (webdisclosure.fr / boursorama.com, 18/03/2026) ·
-    <strong>SENS-501 données 6M Cohorte 2 (23/03/2026) :</strong> 2/3 patients dose haute maintiennent améliorations audiométriques à 6M · Signal dose-réponse · Sécurité confirmée 6 patients · Cohorte 3 dose + haute envisagée · Données précliniques SENS-601 présentées (boursorama.com / mypharma-editions.com, 23/03/2026) ·
-    <strong>SENS-601 (GJB2-GT) :</strong> CTA soumission S1 2026 · IND fin 2026 · Interactions FDA+EMA depuis T3 2025 · GJB2 = 1ère cause surdité congénitale mondiale 30-40% des cas ·
-    SENS-40 Phase 2b SSNHL + Phase 2a implant cochléaire + Phase 2a cisplatine ·
-    AG Mixte 11 mai 2026 14h00 Paris · Square Louvois (businesswire.com, 20/04/2026) · ISIN FR0012596468 · Montpellier, France · Cap ~28 M€ · 52S bas 0,159€ · Partenaires Audiogene : Necker, Pasteur, Fondation Audition, ANR · Concurrent : Akouos (Regeneron), Decibel (Lilly), GenOtof
+    PRT 1S ALSEN (29/04 17:34, Fermé) · RSI 48,55 · MACD +0,034 · Cours 0,3665€ · Fib : 23,6%=0,37€ · 38,2%=0,5005€ · 50%=0,606€ · 61,8%=0,7115€ · 0%=0,159€ · Consensus Boursorama 1,65€ ·
+    <strong>Plateforme Pasteur :</strong> Accord-cadre signé 27/05/2019 · Option licences exclusives · Prolongé 31/12/2028 (businesswire.com / mypharma-editions.com, 5/01/2024) · Institut de l'Audition · Pr Christine Petit · Clause résiliation en cas de changement de contrôle non agréé · 2 pgms générés : SENS-501 + SENS-601 · Programmes supplémentaires prévus avant 2028 ·
+    <strong>FY2025 (18/03/2026) :</strong> Tréso 47,5 M€ (31/12/2025) · Financement 60 M€ janv. 2026 dont Sanofi 20 M€ stratégique · Runway fin S1 2027 (webdisclosure.fr / boursorama.com) ·
+    <strong>SENS-501 (23/03/2026) :</strong> 2/3 patients C2 · maintien audiométrie à 6M · 0 EIG · signal dose-réponse · C3 envisagée (boursorama.com / mypharma-editions.com) ·
+    <strong>SENS-601 :</strong> CTA S1 2026 · IND fin 2026 · GJB2 = 30-40% surdités génétiques mondiales · candidat sélectionné avr. 2023 (businesswire.com, 5/01/2024) ·
+    SENS-40 Ph2b SSNHL + Ph2a implant (Cochlear Limited) + Ph2a cisplatine · AG 11 mai 2026 Paris (businesswire.com, 20/04/2026) · ISIN FR0012596468 · Montpellier · Cap ~28 M€ · Concurrents : Akouos/Regeneron, Decibel/Lilly, GenOtof
     <br><br>
-    <span style="color:#3a4060">Analyse réalisée le <strong style="color:#4a5080">29 avril 2026 à 18h43</strong> · NPC — Pas un conseil en investissement · DYOR · Biotech clinique stade précoce = risque très élevé de perte · Performances passées ne préjugent pas des performances futures.</span>
+    <span style="color:#3a4060">Analyse réalisée le <strong style="color:#4a5080">29 avril 2026 à 18h43</strong> · NPC — Pas un conseil en investissement · DYOR · Biotech clinique stade précoce = risque élevé · Performances passées ne préjugent pas des performances futures.</span>
   </div>
 </footer>
-
 </body>
 </html>
